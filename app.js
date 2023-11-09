@@ -57,6 +57,7 @@ const resultDisplay = document.querySelector('#result')
 let cardsChosen = []
 let cardsChosenIds = []
 const cardsWon = []
+let attempts = 0;
 
 function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
@@ -92,12 +93,15 @@ function checkMatch() {
         alert('Sorry try again!')
     }
 
-    resultDisplay.textContent = cardsWon.length
+    resultDisplay.textContent = cardsWon.length + ' Attempts: ' + attempts
     cardsChosen = []
     cardsChosenIds = []
 
+    attempts++
+
     if(cardsWon.length == cardArray.length/2) {
         resultDisplay.textContent = 'Congratulations you found them all!'
+        attempts = 0
     }
 }
 
