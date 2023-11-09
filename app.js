@@ -98,6 +98,7 @@ function checkMatch() {
     cardsChosenIds = []
 
     attempts++
+    Console.log('Attempts: ' +attempts)
 
     if(cardsWon.length == cardArray.length/2) {
         resultDisplay.textContent = 'Congratulations you found them all!'
