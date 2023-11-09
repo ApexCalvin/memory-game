@@ -93,12 +93,10 @@ function checkMatch() {
         alert('Sorry try again!')
     }
 
-    resultDisplay.textContent = cardsWon.length + ' Attempts: ' + attempts
+    attempts++
+    resultDisplay.textContent = cardsWon.length + ' \nAttempts: ' + attempts
     cardsChosen = []
     cardsChosenIds = []
-
-    attempts++
-    Console.log('Attempts: ' +attempts)
 
     if(cardsWon.length == cardArray.length/2) {
         resultDisplay.textContent = 'Congratulations you found them all!'
