@@ -58,6 +58,7 @@ let cardsChosen = []
 let cardsChosenIds = []
 const cardsWon = []
 let attempts = 0;
+let message = "";
 
 function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
@@ -78,10 +79,10 @@ function checkMatch() {
     if(optionOneId == optionTwoId) {
         cards[optionOneId].setAttribute('src', 'images/back.PNG')
         cards[optionTwoId].setAttribute('src', 'images/back.PNG')
-        alert('You have clicked the same image!')
+        message = "You have clicked the same image!"
     }
     if(cardsChosen[0] == cardsChosen[1]){
-        alert('You found a match!')
+        message = "You found a match!"
         cards[optionOneId].setAttribute('src', 'images/white.PNG')
         cards[optionTwoId].setAttribute('src', 'images/white.PNG')
         cards[optionOneId].removeEventListener('click', flipCard)
@@ -90,11 +91,11 @@ function checkMatch() {
     } else {
         cards[optionOneId].setAttribute('src', 'images/back.PNG')
         cards[optionTwoId].setAttribute('src', 'images/back.PNG')
-        alert('Sorry try again!')
+        message = "Sorry try again!"
     }
 
     attempts++
-    resultDisplay.textContent = cardsWon.length + ' \nAttempts: ' + attempts
+    resultDisplay.textContent = cardsWon.length + '  | Attempts: ' + attempts + '  | ' + message
     cardsChosen = []
     cardsChosenIds = []
 
