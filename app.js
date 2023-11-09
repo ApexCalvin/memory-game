@@ -101,7 +101,6 @@ function checkMatch() {
 
     if(cardsWon.length == cardArray.length/2) {
         message = 'Congratulations you found them all!'
-        attempts = 0
     }
 
     resultDisplay.textContent = cardsWon.length + '  | Attempts: ' + attempts + '  | ' + message
