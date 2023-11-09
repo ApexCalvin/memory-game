@@ -95,14 +95,16 @@ function checkMatch() {
     }
 
     attempts++
-    resultDisplay.textContent = cardsWon.length + '  | Attempts: ' + attempts + '  | ' + message
+   
     cardsChosen = []
     cardsChosenIds = []
 
     if(cardsWon.length == cardArray.length/2) {
-        resultDisplay.textContent = 'Congratulations you found them all!'
+        message = 'Congratulations you found them all!'
         attempts = 0
     }
+
+    resultDisplay.textContent = cardsWon.length + '  | Attempts: ' + attempts + '  | ' + message
 }
 
 function flipCard() {
